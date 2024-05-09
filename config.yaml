@@ -1,0 +1,196 @@
+Permuted5_MNIST:
+  appr_hyp:
+    EWC: 1
+    MAS: 1
+    Neuron: 1000
+    NeuGrad: 10000000.0
+    RWalk: 1000
+    SCP: 10
+    SI: 1
+  batch_size: 64
+  classifier_seed: 950
+  data_path: data/
+  dataset: MNIST
+  epochs: 20
+  experiment: Permuted5_MNIST
+  tasks: 5
+  model: MLP10
+  model_path: base_models/Permuted5_MNIST/MLP10.pth
+  shared_weights:
+  - backbone
+  shared_weights_seed: 13
+Split10_CIFAR100:
+  appr_hyp:
+    EWC: 1
+    MAS: 1
+    Neuron: 1000
+    NeuGrad: 10000000.0
+    RWalk: 1000
+    SCP: 10
+    SI: 1
+  batch_size: 64
+  data_path: data/
+  dataset: CIFAR100
+  experiment: Split10_CIFAR100
+  tasks: 10
+  model: LeNet2
+  model_path: base_models/Split10_CIFAR100/LeNet2.pth
+  shared_weights:
+  - backbone
+  - bridge
+  slices_path:
+    test: dataset_slices/Split10_CIFAR100/test_indices.pkl
+    train: dataset_slices/Split10_CIFAR100/train_indices.pkl
+Split5_CIFAR10:
+  appr_hyp:
+    EWC: 400
+    MAS: 10
+    Neuron: 100000.0
+    NeuGrad: 10000000.0
+    GradCAM: 10000000.0
+    NeuGradVar: 10000.0
+    RWalk: 40000
+    SCP: 10000
+    SI: 10
+    pseudoNPC: 10000
+  batch_size: 64
+  classifier_seed: 1023
+  data_path: data/
+  dataset: CIFAR10
+  epochs: 60
+  experiment: Split5_CIFAR10
+  tasks: 5
+  model: LeNet2
+  model_path: base_models/Split5_CIFAR10/LeNet2.pth
+  shared_weights:
+  - backbone
+  - bridge
+#   model: resnet10
+#   model_path: base_models/Split5_CIFAR10/resnet10.pth
+#   shared_weights:
+#   - conv1
+#   - layer1
+#   - layer2
+#   - layer3
+#   - layer4
+  shared_weights_seed: 15
+  slices_path:
+    test: dataset_slices/Split5_CIFAR10/test_indices.pkl
+    train: dataset_slices/Split5_CIFAR10/train_indices.pkl
+Split4_CIFAR10:
+  appr_hyp:
+    EWC: 400
+    MAS: 10
+    Neuron: 100000.0
+    NeuGrad: 10000000.0
+    GradCAM: 10000000.0
+    RWalk: 40000
+    SCP: 10000
+    SI: 10
+  batch_size: 64
+  classifier_seed: 502
+  data_path: data/
+  dataset: CIFAR10
+  epochs: 60
+  experiment: Split4_CIFAR10
+  tasks: 4
+  model: LeNet2
+  model_path: base_models/Split4_CIFAR10/LeNet2.pth
+  shared_weights:
+  - backbone
+  - bridge
+  shared_weights_seed: 17
+  slices_path:
+    test: dataset_slices/Split4_CIFAR10/test_indices.pkl
+    train: dataset_slices/Split4_CIFAR10/train_indices.pkl
+Split5_CIFAR100:
+  appr_hyp:
+    EWC: 1
+    MAS: 1
+    Neuron: 1000
+    NeuGrad: 10000000.0
+    RWalk: 1000
+    SCP: 10
+    SI: 1
+  batch_size: 64
+  data_path: data/
+  dataset: CIFAR100
+  experiment: Split5_CIFAR100
+  tasks: 5
+  model: LeNet2
+  model_path: base_models/Split5_CIFAR100/LeNet2.pth
+  shared_weights:
+  - backbone
+  - bridge
+  slices_path:
+    test: dataset_slices/Split5_CIFAR100/test_indices.pkl
+    train: dataset_slices/Split5_CIFAR100/train_indices.pkl
+Split5_MNIST:
+  appr_hyp:
+    EWC: 400
+    MAS: 10
+    Neuron: 100000.0
+    NeuGrad: 10000000.0
+    GradCAM: 10000000.0
+    NeuGradVar: 1000000.0
+    RWalk: 40000
+    SCP: 10000
+    SI: 10
+    itpEWC: 4000
+    pseudoNPC: 10000
+  batch_size: 64
+  shared_weights_seed: 11
+  classifier_seed: 617
+  data_path: data/
+  dataset: MNIST
+  epochs: 40
+  experiment: Split5_MNIST
+  tasks: 5
+  model: MLP2
+  model_path: base_models/Split5_MNIST/MLP2.pth
+  shared_weights:
+  - backbone
+#   model: modLeNet
+#   model_path: base_models/Split5_MNIST/modLeNet.pth
+#   shared_weights:
+#   - backbone
+#   - bridge
+  slices_path:
+    test: dataset_slices/Split5_MNIST/test_indices.pkl
+    train: dataset_slices/Split5_MNIST/train_indices.pkl
+Split5_FashionMNIST:
+  appr_hyp:
+    EWC: 400
+    MAS: 10
+    Neuron: 100000.0
+    NeuGrad: 10000000.0
+    GradCAM: 10000000.0
+    NeuGradVar: 1000000.0
+    RWalk: 40000
+    SCP: 10000
+    SI: 10
+    itpEWC: 4000
+    pseudoNPC: 10000
+  batch_size: 64
+  shared_weights_seed: 11
+  classifier_seed: 617
+  data_path: data/
+  dataset: FashionMNIST
+  epochs: 40
+  experiment: Split5_FashionMNIST
+  tasks: 5
+  model: MLP2
+  model_path: base_models/Split5_MNIST/MLP2.pth
+  shared_weights:
+  - backbone
+  slices_path:
+    test: dataset_slices/Split5_FashionMNIST/test_indices.pkl
+    train: dataset_slices/Split5_FashionMNIST/train_indices.pkl
+experiments:
+- Split5_MNIST
+- Split5_FashionMNIST
+- Split4_CIFAR10
+- Split5_CIFAR10
+- Split5_CIFAR100
+- Split10_CIFAR100
+- Permuted5_MNIST
